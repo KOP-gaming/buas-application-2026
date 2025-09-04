@@ -1,15 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://clya2jolcja5e"]
+[gd_scene load_steps=6 format=3 uid="uid://clya2jolcja5e"]
 
 [ext_resource type="Script" uid="uid://cwppcbd2yei8y" path="res://player.gd" id="1_hdpfe"]
 [ext_resource type="Texture2D" uid="uid://67wexbprxcs5" path="res://icon.svg" id="2_8y1kj"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdpfe"]
+size = Vector2(93, 9)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8dfu"]
-size = Vector2(1151.5, 43)
+size = Vector2(1151.5, 42.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o74uc"]
-size = Vector2(50.5, 48)
+size = Vector2(53, 49)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 1
+shadow_filter_smooth = 3.9
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -124.0
+offset_top = -57.0
+offset_right = 1302.0
+offset_bottom = 757.0
+color = Color(0.419813, 0.419813, 0.419813, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(494, 602)
+collision_layer = 2
+collision_mask = 2
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -44.0
+offset_top = -4.0
+offset_right = 49.0
+offset_bottom = 6.0
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.5, 0.5)
+shape = SubResource("RectangleShape2D_hdpfe")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -20,7 +55,7 @@ offset_right = 1152.5
 offset_bottom = 646.0
 
 [node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(578.25, 628.5)
+position = Vector2(578, 627.25)
 shape = SubResource("RectangleShape2D_m8dfu")
 
 [node name="player" type="CharacterBody2D" parent="."]
@@ -33,5 +68,5 @@ scale = Vector2(0.414063, 0.382813)
 texture = ExtResource("2_8y1kj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(0.75, 0)
+position = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_o74uc")
