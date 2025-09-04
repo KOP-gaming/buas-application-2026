@@ -1,0 +1,22 @@
+TUTORIAL 1: The Button
+- text: "this is a puzzle room, in these rooms you have to find a way to press the button to open the door to the next room"
+- objective: "press the button to open the door"
+LAYOUT
+- simple box
+- fixed camera
+- single button in the middle
+- a way to cross the map without going on the button
+- level should feel like it is inside a testing facility or lab
+GAMEPLAY
+player walks onto/over the button to activate the door, when the player crosses the button the door light turns green and the player can continue.
+
+TUTORIAL 2: Shoot
+- text: "some maps require you to destroy something in order to get to the button, blue boxes can be destroyed using the gun"
+- objective: "press E to shoot"
+LAYOUT
+- same map as TUTORIAL 1 but the button is now protected by destroyable boxes
+- fixed camera
+- single button in the middle
+- level should feel like it is inside of a testing facility/labn
+GAMEPLAY
+player has to destroy (some of) the boxes in order to get acces to the button and press it

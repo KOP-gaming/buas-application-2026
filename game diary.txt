@@ -1,0 +1,10 @@
+puzzle platformer day one (03/09/2025)
+- started playing that level again for inspiration
+- started playing cat mario for inspiration
+- continued playing geometry dash and low oxygen for inspiration
+- started working on tutorial level 1
+- created working movement
+- made it so that if you stop moving mid air you keep some of your spseed instead of dropping straight down
+- played around with a static cam and a player following cam
+- decided that camera options will depend on the level
+
