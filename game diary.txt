@@ -8,3 +8,10 @@ puzzle platformer day one (03/09/2025)
 - played around with a static cam and a player following cam
 - decided that camera options will depend on the level
 
+Learning about lights (03/09/2025)
+- started learning about lights and shadows in godot
+- got some lights working in godot
+
+The progression mechanic (11/09/2025)
+- learned how to use an area 2d to change the colour of lights and disable/enable collision on objects
+- prepared my code for easier use in the future
