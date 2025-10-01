@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://clya2jolcja5e"]
+[gd_scene load_steps=15 format=3 uid="uid://clya2jolcja5e"]
 
 [ext_resource type="Script" uid="uid://bnw4vyx4cii65" path="res://area_2d.gd" id="1_8y1kj"]
 [ext_resource type="Script" uid="uid://cwppcbd2yei8y" path="res://player.gd" id="1_hdpfe"]
 [ext_resource type="Texture2D" uid="uid://67wexbprxcs5" path="res://icon.svg" id="2_8y1kj"]
 [ext_resource type="Script" uid="uid://h3xc2np6kx74" path="res://switchlight.gd" id="2_m8dfu"]
+[ext_resource type="Script" uid="uid://c1jia2omai5te" path="res://camerea1.gd" id="5_o74uc"]
+[ext_resource type="Script" uid="uid://dudd5f3giu3h4" path="res://camerea_2.gd" id="6_s04bh"]
 
 [sub_resource type="Gradient" id="Gradient_8y1kj"]
 offsets = PackedFloat32Array(0, 0.00649351, 1)
@@ -22,17 +24,23 @@ size = Vector2(93, 8.5)
 size = Vector2(20, 604)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8dfu"]
-size = Vector2(1476.75, 42.5)
+size = Vector2(2305.75, 42.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o74uc"]
 size = Vector2(53, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22rsl"]
+size = Vector2(1171, 661)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ek00w"]
+size = Vector2(1142, 649)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -124.0
 offset_top = -57.0
-offset_right = 1302.0
+offset_right = 2914.0
 offset_bottom = 757.0
 color = Color(0.419813, 0.419813, 0.419813, 1)
 
@@ -74,19 +82,19 @@ shape = SubResource("RectangleShape2D_s04bh")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-offset_left = 0.5
+offset_left = 1.0
 offset_top = 606.0
-offset_right = 1152.5
+offset_right = 2308.0
 offset_bottom = 646.0
 
 [node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(740.625, 627.25)
+position = Vector2(1155.13, 627.25)
 shape = SubResource("RectangleShape2D_m8dfu")
 
 [node name="player" type="CharacterBody2D" parent="."]
 position = Vector2(309, 542)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_hdpfe")
 
 [node name="Icon" type="Sprite2D" parent="player"]
@@ -102,5 +110,29 @@ shape = SubResource("RectangleShape2D_o74uc")
 color = Color(0.617455, 0.617455, 0.617455, 1)
 energy = 1.29
 blend_mode = 2
+
+[node name="camerea1" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("5_o74uc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camerea1"]
+position = Vector2(574, 278)
+shape = SubResource("RectangleShape2D_22rsl")
+
+[node name="Camera2D" type="Camera2D" parent="camerea1"]
+position = Vector2(576, 322)
+
+[node name="camerea2" type="Area2D" parent="."]
+position = Vector2(1293, 400)
+script = ExtResource("6_s04bh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camerea2"]
+position = Vector2(443, -80.5)
+shape = SubResource("RectangleShape2D_ek00w")
+
+[node name="cam2" type="Camera2D" parent="camerea2"]
+position = Vector2(439, -73)
+enabled = false
 
 [connection signal="area_entered" from="Area2D" to="Area2D/switchlight" method="_on_area_2d_area_entered"]

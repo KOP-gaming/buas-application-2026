@@ -15,3 +15,7 @@ Learning about lights (03/09/2025)
 The progression mechanic (11/09/2025)
 - learned how to use an area 2d to change the colour of lights and disable/enable collision on objects
 - prepared my code for easier use in the future
+
+Camera switching 26/09/2025
+- figured out how to switch back and forth between cameras
+- implemented the camera switching
