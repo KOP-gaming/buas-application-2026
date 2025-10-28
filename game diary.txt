@@ -19,3 +19,15 @@ The progression mechanic (11/09/2025)
 Camera switching 26/09/2025
 - figured out how to switch back and forth between cameras
 - implemented the camera switching
+
+Story document 29/09/2025
+- started working on a story document
+- finished the tutorial story in the story doc.
+
+
+Continuing the story 03/09/2025
+- started work on the story in the first few levels of KUD industries
+- started work on turorial part 2
+
+28/10/2025
+- made button 2 work as intended

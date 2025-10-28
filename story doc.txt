@@ -1,0 +1,32 @@
+#in case of phone pickup continue here if phone was not picked up skip to -KUD laborotories-
+agent G thank god you are there, it apears that one of Dr.K's experiments went wrong and we got transported into this virtual 2D world,
+it's up to us to you to fix this mess but first you'll need to brush up on your skills for this strange world.
+if you go to the right you'll get to [our headquearters] so you can start your training.
+Commander O out...
+
+-HQ-
+good, you made it, we can't determine what exactly happened in Dr.K's lab but we do know that all the security systems got triggered so you'll have to manualy reset them in order to move to the next area.
+-press the button  in this room to proceed-
+
+sadly some areas are more protected and thus will have a button that needs to be held down in order for you to proceed.
+-use the box to hold the button down-
+
+we think that some buttons that used to be easy to get to might have gotten trapped because of the 2d'ification, luckily your service gun is very capable of destroying stuff and get you acces
+-destroy the boxes and hit the button-
+
+Good  job agent G you've  succesfully completed the refresher course, now go ahead and find your way to KUD laborotories and fix this world.
+COmmander O out...
+
+-KUD Laborotories-
+#if phone was not picked up
+Agent G i finally managed to reach you.
+you've probably figured this out already by know since i found you here but something went wrong during an experiment by docter K and we're now trapped in this videogame world.
+if you can reach the experiment room at the end of the building we might be able to reverse the experiment.
+i wanted to give you a refresher course about using your skills in this world but let's just skip that since we are already here.
+Commander O out...
+
+#if phone was picked up
+welcome to KUD labs, 
+in order to reverse the experiment and return to our normal world we need to first find the experiment room, 
+i suspect it is near the end of the building as that is where doctor K prefers to work.
+i hope the training has tought you enough to survive in this strange world, Commander O out...

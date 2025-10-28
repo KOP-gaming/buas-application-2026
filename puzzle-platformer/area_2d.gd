@@ -7,6 +7,8 @@ func _ready() -> void:
 
 #check when body enters or exits the button
 func EnterCheck(body) -> void:
+	$AnimationPlayer.play("door")
+	await $AnimationPlayer.animation_finished
 	var light = $switchlight
 	light.color = Color(0, 255, 0, 255)
 	var exit = $wall
