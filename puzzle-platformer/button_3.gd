@@ -7,12 +7,11 @@ func _ready() -> void:
 
 #check when body enters or exits the button
 func EnterCheck(body) -> void:
-	$AnimationPlayer.play("door3")
-	#var exit = $w3
-	#exit.set_collision_layer_value(1, false)
-	#await $AnimationPlayer.animation_finished
-	#var light = $switchlight
-	#light.color = Color(0, 255, 0, 255)
-	pass
+	$AnimationPlayer.play("door2")
+	var exit = $wall3
+	exit.set_collision_layer_value(1, false)
+	await $AnimationPlayer.animation_finished
+	var light = $switchlight
+	light.color = Color(0, 255, 0, 255)
 func ExitCheck(body) -> void:
 	pass
