@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://clya2jolcja5e"]
+[gd_scene load_steps=35 format=3 uid="uid://clya2jolcja5e"]
 
 [ext_resource type="Script" uid="uid://bnw4vyx4cii65" path="res://area_2d.gd" id="1_8y1kj"]
 [ext_resource type="Script" uid="uid://cwppcbd2yei8y" path="res://player.gd" id="1_hdpfe"]
@@ -7,7 +7,8 @@
 [ext_resource type="Script" uid="uid://c1jia2omai5te" path="res://camerea1.gd" id="5_o74uc"]
 [ext_resource type="Script" uid="uid://dudd5f3giu3h4" path="res://camerea_2.gd" id="6_s04bh"]
 [ext_resource type="Script" uid="uid://bj0f4rl77rgut" path="res://button_2.gd" id="7_22rsl"]
-[ext_resource type="Script" uid="uid://c4btufe7twe6t" path="res://blokje_1.gd" id="8_ek00w"]
+[ext_resource type="Script" uid="uid://bgc1n7httfw76" path="res://camerea_3.gd" id="8_ek00w"]
+[ext_resource type="Script" uid="uid://dl6qconxxi1ax" path="res://button_3.gd" id="9_yjwc7"]
 
 [sub_resource type="Animation" id="Animation_22rsl"]
 length = 0.001
@@ -86,8 +87,11 @@ size = Vector2(93, 8.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s04bh"]
 size = Vector2(20, 604)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4is1s"]
+size = Vector2(52, 384)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8dfu"]
-size = Vector2(2305.75, 42.5)
+size = Vector2(3638.75, 42.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o74uc"]
 size = Vector2(53, 49)
@@ -166,15 +170,87 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33a4j"]
-size = Vector2(76, 75)
+size = Vector2(61, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwynd"]
+size = Vector2(1145, 663)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjn3t"]
+size = Vector2(82.7163, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26y61"]
+size = Vector2(28.0001, 506)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjr05"]
+size = Vector2(28, 101)
+
+[sub_resource type="Animation" id="Animation_pw83q"]
+resource_name = "door3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(568.72, 99.515), Vector2(568.72, -5.48499)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door_3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_33a4j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(568.72, 99.515)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door_3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gwynd"]
+_data = {
+&"RESET": SubResource("Animation_33a4j"),
+&"door3": SubResource("Animation_pw83q")
+}
 
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -96.0
-offset_top = 21.0
-offset_right = 2942.0
-offset_bottom = 835.0
+offset_left = 3.0
+offset_top = -25.0
+offset_right = 3594.0
+offset_bottom = 789.0
 color = Color(0.419813, 0.419813, 0.419813, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -235,11 +311,15 @@ offset_bottom = 4.0
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 offset_left = 1.0
 offset_top = 606.0
-offset_right = 2308.0
+offset_right = 3640.0
 offset_bottom = 646.0
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(28, 413)
+shape = SubResource("RectangleShape2D_4is1s")
+
 [node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1155.13, 627.25)
+position = Vector2(1821.63, 627.25)
 shape = SubResource("RectangleShape2D_m8dfu")
 
 [node name="player" type="CharacterBody2D" parent="."]
@@ -275,10 +355,11 @@ shape = SubResource("RectangleShape2D_22rsl")
 
 [node name="Camera2D" type="Camera2D" parent="camerea1"]
 position = Vector2(576, 322)
+enabled = false
 
 [node name="camerea2" type="Area2D" parent="."]
 visible = false
-position = Vector2(1293, 400)
+position = Vector2(1293, 395)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("6_s04bh")
@@ -338,22 +419,80 @@ blend_mode = 2
 texture = SubResource("GradientTexture2D_m8dfu")
 script = ExtResource("2_m8dfu")
 
-[node name="blokje1" type="RigidBody2D" parent="."]
-position = Vector2(1918, 526)
-collision_layer = 3
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(1824, 533)
+collision_layer = 2
 collision_mask = 3
-contact_monitor = true
-max_contacts_reported = 5
-script = ExtResource("8_ek00w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="blokje1"]
-position = Vector2(-1, 2.5)
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+offset_left = -19.0
+offset_top = -33.0
+offset_right = 42.0
+offset_bottom = 15.0
+color = Color(0, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(11.5, -9)
 shape = SubResource("RectangleShape2D_33a4j")
 
-[node name="ColorRect" type="ColorRect" parent="blokje1"]
-offset_left = -39.0
-offset_top = -36.0
-offset_right = 37.0
-offset_bottom = 38.0
+[node name="camerea3" type="Area2D" parent="."]
+visible = false
+position = Vector2(2656.54, 389.417)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("8_ek00w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="camerea3"]
+position = Vector2(238.962, -114.917)
+shape = SubResource("RectangleShape2D_gwynd")
+
+[node name="cam3" type="Camera2D" parent="camerea3"]
+position = Vector2(235.462, -67.4174)
+enabled = false
+
+[node name="button3" type="Area2D" parent="."]
+position = Vector2(2888.28, 405.485)
+script = ExtResource("9_yjwc7")
+
+[node name="door_3" type="ColorRect" parent="button3"]
+offset_left = 568.72
+offset_top = 99.515
+offset_right = 596.72
+offset_bottom = 200.515
+
+[node name="button3" type="CollisionShape2D" parent="button3"]
+position = Vector2(31.3582, 196.515)
+shape = SubResource("RectangleShape2D_gjn3t")
+
+[node name="button_3" type="ColorRect" parent="button3"]
+offset_left = -10.0
+offset_top = 192.0
+offset_right = 73.0
+offset_bottom = 201.0
+color = Color(1, 0, 0, 1)
+
+[node name="w3" type="StaticBody2D" parent="button3"]
+
+[node name="wall3" type="ColorRect" parent="button3/w3"]
+offset_left = 568.72
+offset_top = -405.485
+offset_right = 596.72
+offset_bottom = 99.515
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="button3/w3"]
+position = Vector2(582.72, -152.485)
+shape = SubResource("RectangleShape2D_26y61")
+
+[node name="d3" type="StaticBody2D" parent="button3"]
+position = Vector2(583.72, 129.515)
+
+[node name="door3" type="CollisionShape2D" parent="button3/d3"]
+position = Vector2(-1, 20.5)
+shape = SubResource("RectangleShape2D_vjr05")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="button3"]
+libraries = {
+&"": SubResource("AnimationLibrary_gwynd")
+}
 
 [connection signal="area_entered" from="Area2D" to="Area2D/switchlight" method="_on_area_2d_area_entered"]
