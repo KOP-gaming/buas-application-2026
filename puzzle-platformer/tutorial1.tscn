@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://clya2jolcja5e"]
+[gd_scene load_steps=31 format=3 uid="uid://clya2jolcja5e"]
 
 [ext_resource type="Script" uid="uid://bnw4vyx4cii65" path="res://area_2d.gd" id="1_8y1kj"]
 [ext_resource type="Script" uid="uid://cwppcbd2yei8y" path="res://player.gd" id="1_hdpfe"]
@@ -92,6 +92,9 @@ size = Vector2(52, 384)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8dfu"]
 size = Vector2(3638.75, 42.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26y61"]
+size = Vector2(14, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o74uc"]
 size = Vector2(53, 49)
@@ -263,6 +266,16 @@ shape = SubResource("RectangleShape2D_4is1s")
 [node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1821.63, 627.25)
 shape = SubResource("RectangleShape2D_m8dfu")
+
+[node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
+offset_left = 2113.0
+offset_top = 583.0
+offset_right = 2127.0
+offset_bottom = 606.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2120, 594.5)
+shape = SubResource("RectangleShape2D_26y61")
 
 [node name="player" type="CharacterBody2D" parent="."]
 top_level = true

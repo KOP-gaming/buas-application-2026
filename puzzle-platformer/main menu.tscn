@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckrt4he0e4g61"]
+
+[ext_resource type="Script" uid="uid://c2jw77o67cgku" path="res://button.gd" id="1_7mewq"]
+[ext_resource type="Script" uid="uid://b5je6drtjvhbj" path="res://quit.gd" id="2_bajiw"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 323)
+
+[node name="Start game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 143.0
+offset_right = 782.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 27
+text = "Start Game"
+script = ExtResource("1_7mewq")
+
+[node name="Skip Tutorial" type="Button" parent="."]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 261.0
+offset_right = 788.0
+offset_bottom = 361.0
+theme_override_font_sizes/font_size = 27
+text = "Skip Tutorial"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 382.0
+offset_right = 788.0
+offset_bottom = 481.0
+theme_override_font_sizes/font_size = 27
+text = "Quit"
+script = ExtResource("2_bajiw")
