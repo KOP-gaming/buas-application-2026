@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://clya2jolcja5e"]
+[gd_scene load_steps=33 format=3 uid="uid://clya2jolcja5e"]
 
 [ext_resource type="Script" uid="uid://bnw4vyx4cii65" path="res://area_2d.gd" id="1_8y1kj"]
 [ext_resource type="Script" uid="uid://cwppcbd2yei8y" path="res://player.gd" id="1_hdpfe"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bj0f4rl77rgut" path="res://button_2.gd" id="7_22rsl"]
 [ext_resource type="Script" uid="uid://bgc1n7httfw76" path="res://camerea_3.gd" id="8_ek00w"]
 [ext_resource type="Script" uid="uid://dl6qconxxi1ax" path="res://button_3.gd" id="9_yjwc7"]
+[ext_resource type="Script" uid="uid://6kifqtl62wrg" path="res://nextlevel.gd" id="10_pw83q"]
 
 [sub_resource type="Animation" id="Animation_22rsl"]
 length = 0.001
@@ -71,12 +72,12 @@ _data = {
 &"door": SubResource("Animation_s04bh")
 }
 
-[sub_resource type="Gradient" id="Gradient_8y1kj"]
+[sub_resource type="Gradient" id="Gradient_pw83q"]
 offsets = PackedFloat32Array(0, 0.00649351, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 0, 0, 1, 0.190762, 0.190762, 0.190762, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_m8dfu"]
-gradient = SubResource("Gradient_8y1kj")
+gradient = SubResource("Gradient_pw83q")
 fill = 1
 fill_from = Vector2(0.495413, 0.481651)
 fill_to = Vector2(1, 0.00458716)
@@ -181,13 +182,16 @@ size = Vector2(1145, 663)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjn3t"]
 size = Vector2(40, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjr05"]
+size = Vector2(157, 289)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 1.0
-offset_top = -25.0
-offset_right = 3592.0
-offset_bottom = 789.0
+offset_left = -21.0
+offset_top = -22.0
+offset_right = 3570.0
+offset_bottom = 792.0
 color = Color(0.419813, 0.419813, 0.419813, 1)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -572,5 +576,15 @@ color = Color(0.611765, 0, 1, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boxymcboxface6"]
 position = Vector2(-7.12207, -13.2977)
 shape = SubResource("RectangleShape2D_gjn3t")
+
+[node name="nextlevel" type="Area2D" parent="."]
+position = Vector2(3527.85, 560.081)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("10_pw83q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nextlevel"]
+position = Vector2(31.6538, -99.5809)
+shape = SubResource("RectangleShape2D_vjr05")
 
 [connection signal="area_entered" from="Area2D" to="Area2D/switchlight" method="_on_area_2d_area_entered"]

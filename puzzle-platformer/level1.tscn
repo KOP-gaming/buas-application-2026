@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr1p3wg3mi8g4"]
+
+[ext_resource type="Script" uid="uid://cwppcbd2yei8y" path="res://player.gd" id="1_dopym"]
+[ext_resource type="Texture2D" uid="uid://67wexbprxcs5" path="res://icon.svg" id="2_ootpb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v38iq"]
+size = Vector2(53, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dopym"]
+size = Vector2(1059, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ootpb"]
+size = Vector2(255, 676)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+top_level = true
+position = Vector2(116, 603)
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_dopym")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="player"]
+position = Vector2(1.5, 1.5)
+scale = Vector2(0.414063, 0.382813)
+texture = ExtResource("2_ootpb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_v38iq")
+
+[node name="Marker2D" type="Marker2D" parent="player"]
+position = Vector2(39, 1)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(0, -255)
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(94, 649)
+
+[node name="ColorRect" type="ColorRect" parent="floor"]
+offset_left = -11.0
+offset_top = -20.0
+offset_right = 1049.0
+offset_bottom = 20.0
+color = Color(0, 0.337255, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(518.5, 0)
+shape = SubResource("RectangleShape2D_dopym")
+
+[node name="static walls" type="StaticBody2D" parent="."]
+position = Vector2(-161, 411)
+
+[node name="ColorRect" type="ColorRect" parent="static walls"]
+offset_left = -603.0
+offset_top = -417.0
+offset_right = 245.0
+offset_bottom = 258.0
+color = Color(0.521141, 0.521141, 0.521141, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="static walls"]
+position = Vector2(117.5, -78)
+shape = SubResource("RectangleShape2D_ootpb")
