@@ -5,18 +5,12 @@ extends Area2D
 func _ready() -> void:
 	body_entered.connect(EnterCheck)
 	body_exited.connect(ExitCheck)
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func EnterCheck() -> void:
+func EnterCheck(body) -> void:
+	$AnimationPlayer.play("level1door")
+func ExitCheck(body) -> void:
 	pass
-
-func ExitCheck() -> void:
-	pass
-func on_body_entered(body) -> void:
-	if body.name == ("player"):
-		pass

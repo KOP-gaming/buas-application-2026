@@ -21,6 +21,11 @@ func EnterCheck(body) -> void:
 		pass
 	else:
 		cam1.set_enabled(true)
+	var outside = get_node("/root/Node2D/removethiswall/thewall")
+	if outside.is_visible():
+		outside.set_visible(false)
+	else:
+		pass
 	
 	
 
@@ -29,3 +34,5 @@ func ExitCheck(body) -> void:
 	cam1.set_enabled(false)
 	var followcam = get_node("/root/Node2D/player/followcam")
 	followcam.set_enabled(true)
+	var outside = get_node("/root/Node2D/removethiswall/thewall")
+	outside.set_visible(true)

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var bullet = preload("res://bullet.tscn")
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var JUMP_VELOCITY = -400.0
 const DOWN = 400
 var push_force = 40.0
 
