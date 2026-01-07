@@ -26,6 +26,7 @@ func EnterCheck(body) -> void:
 		outside.set_visible(false)
 	else:
 		pass
+	$AnimationPlayer.play("text")
 	
 	
 
