@@ -165,7 +165,7 @@ size = Vector2(2352, 40)
 size = Vector2(255, 676)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3l65w"]
-size = Vector2(40, 473)
+size = Vector2(40, 467)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5j5gb"]
 size = Vector2(1289.5, 618.5)
@@ -529,12 +529,12 @@ shape = SubResource("RectangleShape2D_ootpb")
 
 [node name="ColorRect2" type="ColorRect" parent="static walls"]
 offset_left = 2433.0
-offset_top = -411.0
+offset_top = -406.0
 offset_right = 2473.0
 offset_bottom = 53.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="static walls"]
-position = Vector2(2452, -174.5)
+position = Vector2(2452, -171.5)
 shape = SubResource("RectangleShape2D_3l65w")
 
 [node name="removethiswall" type="StaticBody2D" parent="."]
@@ -547,6 +547,24 @@ offset_top = 5.0
 offset_right = 2312.0
 offset_bottom = 675.0
 color = Color(0.621524, 0.621524, 0.621524, 1)
+
+[node name="Label2" type="Label" parent="removethiswall/thewall"]
+offset_left = 3.0
+offset_top = 524.0
+offset_right = 332.0
+offset_bottom = 586.0
+theme_override_font_sizes/font_size = 10
+text = "Lab entrance here"
+
+[node name="Label" type="Label" parent="removethiswall/thewall"]
+offset_left = 393.0
+offset_top = -42.0
+offset_right = 1193.0
+offset_bottom = 640.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 200
+text = "BCI"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="removethiswall"]
 position = Vector2(1789.25, 315.75)

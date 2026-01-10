@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
 const DOWN = 400
-var push_force = 40.0
+var push_force = 30.0
 
 
 func _physics_process(delta: float) -> void:
