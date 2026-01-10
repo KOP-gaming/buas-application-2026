@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://clya2jolcja5e"]
+[gd_scene load_steps=34 format=3 uid="uid://clya2jolcja5e"]
 
 [ext_resource type="Script" uid="uid://bnw4vyx4cii65" path="res://area_2d.gd" id="1_8y1kj"]
+[ext_resource type="Script" uid="uid://d15025yosokoj" path="res://tutorial_1.gd" id="1_33a4j"]
 [ext_resource type="Script" uid="uid://cwppcbd2yei8y" path="res://player.gd" id="1_hdpfe"]
 [ext_resource type="Texture2D" uid="uid://67wexbprxcs5" path="res://icon.svg" id="2_8y1kj"]
 [ext_resource type="Script" uid="uid://h3xc2np6kx74" path="res://switchlight.gd" id="2_m8dfu"]
@@ -186,6 +187,7 @@ size = Vector2(40, 40)
 size = Vector2(157, 289)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_33a4j")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -21.0
