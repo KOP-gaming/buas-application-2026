@@ -1,13 +1,15 @@
-[gd_scene load_steps=29 format=3 uid="uid://cr1p3wg3mi8g4"]
+[gd_scene load_steps=31 format=3 uid="uid://cr1p3wg3mi8g4"]
 
 [ext_resource type="Script" uid="uid://cwppcbd2yei8y" path="res://player.gd" id="1_dopym"]
 [ext_resource type="Script" uid="uid://cxs5k7sp2w6n3" path="res://level_1.gd" id="1_ootpb"]
 [ext_resource type="Texture2D" uid="uid://67wexbprxcs5" path="res://icon.svg" id="2_ootpb"]
 [ext_resource type="Script" uid="uid://c8d30r8nbpk2e" path="res://jumppad.gd" id="2_v38iq"]
 [ext_resource type="Script" uid="uid://dab1usrwn2qgo" path="res://level_1_button.gd" id="3_v8kj3"]
+[ext_resource type="AudioStream" uid="uid://grij36vd41ts" path="res://sounds/sound.wav" id="4_5j5gb"]
 [ext_resource type="Script" uid="uid://uiymppmbjv8j" path="res://resume.gd" id="6_xy4tn"]
 [ext_resource type="Script" uid="uid://b5je6drtjvhbj" path="res://quit.gd" id="7_usj0q"]
 [ext_resource type="Script" uid="uid://b5lhfnb4oex8v" path="res://main_menu.gd" id="8_5j5gb"]
+[ext_resource type="AudioStream" uid="uid://bhfd3hh0sw7a7" path="res://sounds/shoot.wav" id="9_usj0q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8kj3"]
 size = Vector2(1152, 650)
@@ -457,6 +459,9 @@ offset_right = 501.99
 offset_bottom = -63.566
 color = Color(1, 0, 0, 1)
 
+[node name="door_open" type="AudioStreamPlayer2D" parent="level1/level1button"]
+stream = ExtResource("4_5j5gb")
+
 [node name="Label" type="Label" parent="level1"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -99.01
@@ -531,12 +536,16 @@ text = "Quit Game"
 script = ExtResource("7_usj0q")
 
 [node name="main menu" type="Button" parent="player/menu"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 107.0
 offset_right = 380.0
 offset_bottom = 163.0
 text = "Main Menu"
 script = ExtResource("8_5j5gb")
+
+[node name="shoot" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("9_usj0q")
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(94, 649)

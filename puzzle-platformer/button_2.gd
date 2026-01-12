@@ -12,6 +12,8 @@ func EnterCheck(body) -> void:
 	bodycount += 1
 	if bodycount == 1:
 		$AnimationPlayer.play("door2")
+		$door_closing.stop()
+		$door_open.play()
 		var exit = $wall3
 		exit.set_collision_layer_value(1, false)
 		await $AnimationPlayer.animation_finished
@@ -21,7 +23,9 @@ func EnterCheck(body) -> void:
 func ExitCheck(body) -> void:
 	bodycount -= 1
 	if bodycount == 0:
+		$door_open.stop()
 		$AnimationPlayer.play_backwards("door2")
+		$door_closing.play()
 		var exit = $wall3
 		exit.set_collision_layer_value(1, true)
 		var light = $switchlight

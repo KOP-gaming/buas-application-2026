@@ -8,6 +8,7 @@ func _ready() -> void:
 #check when body enters or exits the button
 func EnterCheck(body) -> void:
 	$AnimationPlayer.play("door2")
+	$door_open.play()
 	var exit = $wall3
 	exit.set_collision_layer_value(1, false)
 	await $AnimationPlayer.animation_finished

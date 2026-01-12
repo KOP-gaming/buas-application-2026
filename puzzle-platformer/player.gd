@@ -16,6 +16,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("down"):
 		velocity.y = DOWN
 	if Input.is_action_just_pressed("shoot"):
+		$shoot.pitch_scale = randf_range(0.80, 1.20)
+		$shoot.play()
 		var bullet_temp = bullet.instantiate()
 		bullet_temp.direction = 1
 		get_tree().current_scene.add_child(bullet_temp)

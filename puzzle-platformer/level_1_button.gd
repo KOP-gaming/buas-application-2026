@@ -11,6 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func EnterCheck(body) -> void:
+	$door_open.play()
 	$AnimationPlayer.play("level1door")
 func ExitCheck(body) -> void:
 	pass
