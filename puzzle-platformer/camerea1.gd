@@ -12,6 +12,8 @@ func _process(delta: float) -> void:
 	pass
 	
 func EnterCheck(body) -> void:
+	var followcam = get_node("/root/Node2D/player/followcam")
+	followcam.set_enabled(false)
 	var cam1 = $Camera2D
 	if cam1.is_enabled():
 		pass

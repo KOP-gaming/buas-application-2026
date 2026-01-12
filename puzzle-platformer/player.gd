@@ -2,7 +2,7 @@ extends CharacterBody2D
 @onready var bullet = preload("res://bullet.tscn")
 const SPEED = 300.0
 @export var JUMP_VELOCITY = -400.0
-const DOWN = 400
+const DOWN = 600
 var push_force = 30.0
 
 
@@ -20,6 +20,10 @@ func _physics_process(delta: float) -> void:
 		bullet_temp.direction = 1
 		get_tree().current_scene.add_child(bullet_temp)
 		bullet_temp.global_position = global_position
+	if Input.is_action_just_pressed("menu"):
+		$menu.set_visible(true)
+		get_tree().paused = true
+	
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("left", "right")
