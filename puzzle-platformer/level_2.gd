@@ -16,25 +16,12 @@ func EnterCheck(body) -> void:
 		followcam.set_enabled(false)
 	else:
 		pass
-	var cam1 = $cam1
-	if cam1.is_enabled():
+	var cam2 = $cam2
+	if cam2.is_enabled():
 		pass
 	else:
-		cam1.set_enabled(true)
-	var outside = get_node("/root/Node2D/removethiswall")
-	if outside.is_visible():
-		outside.set_visible(false)
-	var text = get_node("/root/Node2D/player/text")
-	if text.is_visible():
-		text.set_visible(false)
-	else:
-		pass
-	$AnimationPlayer.play("text")
-	
-	
-
+		cam2.set_enabled(true)
+		
 func ExitCheck(body) -> void:
-	var cam1 = $cam1
-	cam1.set_enabled(false)
-	var followcam = get_node("/root/Node2D/player/followcam")
-	followcam.set_enabled(true)
+	var cam2 = $cam2
+	cam2.set_enabled(false)

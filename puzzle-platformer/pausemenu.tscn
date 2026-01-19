@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bunkkbtab4whr"]
+
+[ext_resource type="Script" uid="uid://b5lhfnb4oex8v" path="res://main_menu.gd" id="1_iknc3"]
+[ext_resource type="Script" uid="uid://uiymppmbjv8j" path="res://resume.gd" id="2_ucuyg"]
+[ext_resource type="Script" uid="uid://b5je6drtjvhbj" path="res://quit.gd" id="3_qu36y"]
+
+[node name="pausemenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -50.0
+offset_top = -181.0
+offset_right = 439.0
+offset_bottom = 107.0
+color = Color(0.687215, 0.687215, 0.687215, 1)
+
+[node name="main menu" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 100.0
+offset_right = 390.0
+offset_bottom = 156.0
+text = "Main Menu"
+script = ExtResource("1_iknc3")
+
+[node name="resume" type="Button" parent="ColorRect"]
+layout_mode = 2
+offset_left = 132.0
+offset_top = 21.0
+offset_right = 395.0
+offset_bottom = 74.0
+text = "Resume"
+script = ExtResource("2_ucuyg")
+
+[node name="quit" type="Button" parent="ColorRect"]
+layout_mode = 2
+offset_left = 130.0
+offset_top = 186.0
+offset_right = 391.0
+offset_bottom = 241.0
+text = "Quit Game"
+script = ExtResource("3_qu36y")
