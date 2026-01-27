@@ -2,7 +2,7 @@ extends Area2D
 @export var lifetime : = 1.5
 var speed =  500
 var direction = 1
-var push_force = 1250
+var push_force = 750
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
