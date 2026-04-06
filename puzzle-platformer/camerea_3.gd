@@ -17,8 +17,6 @@ func EnterCheck(body) -> void:
 		pass
 	else:
 		cam3.set_enabled(true)
-	
-	
 
 func ExitCheck(body) -> void:
 	var cam3 = $cam3

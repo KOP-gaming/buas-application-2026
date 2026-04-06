@@ -17,12 +17,6 @@ func EnterCheck(body) -> void:
 		pass
 	else:
 		cam2.set_enabled(true)
-	#check if camera2d IS already anabled and otherwise enable it
-	#if cam1 = enabled:
-	#pass
-	#else:
-	#enable
-	
 
 func ExitCheck(body) -> void:
 	var cam2 = $cam2
