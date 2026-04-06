@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://clya2jolcja5e"]
+[gd_scene load_steps=38 format=3 uid="uid://clya2jolcja5e"]
 
 [ext_resource type="Script" uid="uid://bnw4vyx4cii65" path="res://area_2d.gd" id="1_8y1kj"]
 [ext_resource type="Script" uid="uid://d15025yosokoj" path="res://tutorial_1.gd" id="1_33a4j"]
@@ -7,12 +7,8 @@
 [ext_resource type="Script" uid="uid://h3xc2np6kx74" path="res://switchlight.gd" id="2_m8dfu"]
 [ext_resource type="AudioStream" uid="uid://grij36vd41ts" path="res://sounds/sound.wav" id="4_4is1s"]
 [ext_resource type="Script" uid="uid://c1jia2omai5te" path="res://camerea1.gd" id="5_o74uc"]
-[ext_resource type="Script" uid="uid://uiymppmbjv8j" path="res://resume.gd" id="6_26y61"]
 [ext_resource type="Script" uid="uid://dudd5f3giu3h4" path="res://camerea_2.gd" id="6_s04bh"]
-[ext_resource type="Script" uid="uid://ccdj5hil320jw" path="res://menu.gd" id="6_vjr05"]
 [ext_resource type="Script" uid="uid://bj0f4rl77rgut" path="res://button_2.gd" id="7_22rsl"]
-[ext_resource type="Script" uid="uid://b5je6drtjvhbj" path="res://quit.gd" id="7_vjr05"]
-[ext_resource type="Script" uid="uid://b5lhfnb4oex8v" path="res://main_menu.gd" id="8_4is1s"]
 [ext_resource type="Script" uid="uid://bgc1n7httfw76" path="res://camerea_3.gd" id="8_ek00w"]
 [ext_resource type="Script" uid="uid://dl6qconxxi1ax" path="res://button_3.gd" id="9_yjwc7"]
 [ext_resource type="Script" uid="uid://6kifqtl62wrg" path="res://nextlevel.gd" id="10_pw83q"]
@@ -100,10 +96,13 @@ size = Vector2(20, 604)
 size = Vector2(52, 384)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8dfu"]
-size = Vector2(3638.75, 42.5)
+size = Vector2(4868, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26y61"]
 size = Vector2(14, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eywkd"]
+size = Vector2(45.5, 638)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o74uc"]
 size = Vector2(53, 49)
@@ -269,6 +268,13 @@ stream = ExtResource("4_4is1s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
+[node name="ColorRect3" type="ColorRect" parent="StaticBody2D"]
+offset_left = -1226.0
+offset_top = 606.0
+offset_right = 4.0
+offset_bottom = 643.0
+color = Color(0, 1, 0, 1)
+
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
 offset_left = 1.0
 offset_top = 606.0
@@ -276,11 +282,12 @@ offset_right = 3640.0
 offset_bottom = 646.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(28, 413)
+position = Vector2(-9, 416)
 shape = SubResource("RectangleShape2D_4is1s")
+one_way_collision = true
 
 [node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1821.63, 627.25)
+position = Vector2(1207, 624.5)
 shape = SubResource("RectangleShape2D_m8dfu")
 
 [node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
@@ -293,9 +300,13 @@ offset_bottom = 606.0
 position = Vector2(2120, 594.5)
 shape = SubResource("RectangleShape2D_26y61")
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1199, 284)
+shape = SubResource("RectangleShape2D_eywkd")
+
 [node name="player" type="CharacterBody2D" parent="."]
 top_level = true
-position = Vector2(309, 542)
+position = Vector2(-1136, 560)
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_hdpfe")
@@ -312,55 +323,20 @@ shape = SubResource("RectangleShape2D_o74uc")
 [node name="Marker2D" type="Marker2D" parent="player"]
 position = Vector2(39, 1)
 
-[node name="menu" type="Control" parent="player"]
-process_mode = 2
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -202.0
-offset_top = -260.0
-offset_right = 288.0
-offset_bottom = 27.0
-script = ExtResource("6_vjr05")
-
-[node name="ColorRect" type="ColorRect" parent="player/menu"]
-layout_mode = 0
-offset_right = 489.0
-offset_bottom = 288.0
-color = Color(0.687215, 0.687215, 0.687215, 1)
-
-[node name="resume" type="Button" parent="player/menu"]
-layout_mode = 2
-offset_left = 116.0
-offset_top = 34.0
-offset_right = 379.0
-offset_bottom = 87.0
-text = "Resume"
-script = ExtResource("6_26y61")
-
-[node name="quit" type="Button" parent="player/menu"]
-layout_mode = 2
-offset_left = 117.0
-offset_top = 183.0
-offset_right = 378.0
-offset_bottom = 238.0
-text = "Quit Game"
-script = ExtResource("7_vjr05")
-
-[node name="main menu" type="Button" parent="player/menu"]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 107.0
-offset_right = 380.0
-offset_bottom = 163.0
-text = "Main Menu"
-script = ExtResource("8_4is1s")
-
 [node name="followcam" type="Camera2D" parent="player"]
 position = Vector2(0, -258)
 
 [node name="shoot" type="AudioStreamPlayer2D" parent="player"]
 stream = ExtResource("11_ve2se")
+
+[node name="Label" type="Label" parent="player"]
+offset_left = 274.0
+offset_top = -583.0
+offset_right = 863.0
+offset_bottom = -496.0
+theme_override_font_sizes/font_size = 15
+text = "get to the training facility to train up and
+get us out of this strange 2D world"
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.617455, 0.617455, 0.617455, 1)

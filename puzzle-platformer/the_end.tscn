@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://gnredv6ctkmk"]
+[gd_scene load_steps=2 format=3 uid="uid://clfvlyi4lyufy"]
 
-[ext_resource type="Script" uid="uid://ccdj5hil320jw" path="res://menu.gd" id="1_keutu"]
-[ext_resource type="Script" uid="uid://b5je6drtjvhbj" path="res://quit.gd" id="2_6rnfd"]
+[ext_resource type="Script" uid="uid://047u0vhsm3eo" path="res://exit.gd" id="1_eqkr4"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,33 +10,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="menu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 333.0
-offset_top = 220.0
-offset_right = 816.0
-offset_bottom = 333.0
-theme_override_font_sizes/font_size = 50
-text = "Main Menu"
-script = ExtResource("1_keutu")
-
-[node name="quit" type="Button" parent="."]
-layout_mode = 0
-offset_left = 335.0
-offset_top = 403.0
-offset_right = 817.0
-offset_bottom = 517.0
-theme_override_font_sizes/font_size = 50
-text = "Quit"
-script = ExtResource("2_6rnfd")
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 294.0
-offset_top = 33.0
-offset_right = 853.0
-offset_bottom = 157.0
-theme_override_font_sizes/font_size = 50
-text = "The end"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 326.0
+offset_top = 17.0
+offset_right = 798.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 95
+text = "The end...."
+
+[node name="exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 144.0
+offset_right = 793.0
+offset_bottom = 242.0
+theme_override_font_sizes/font_size = 65
+text = "quit"
+script = ExtResource("1_eqkr4")

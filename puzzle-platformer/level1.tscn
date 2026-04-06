@@ -828,6 +828,7 @@ offset_bottom = 675.0
 color = Color(0.621524, 0.621524, 0.621524, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="removethiswall/thewall"]
+layout_mode = 0
 offset_top = 548.0
 offset_right = 6.0
 offset_bottom = 629.0

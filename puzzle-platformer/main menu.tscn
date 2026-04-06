@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckrt4he0e4g61"]
 
-[ext_resource type="Script" uid="uid://c2jw77o67cgku" path="res://button.gd" id="1_7mewq"]
+[ext_resource type="Script" uid="uid://bryysg8ilgusi" path="res://start_game.gd" id="1_f0j1r"]
 [ext_resource type="Script" uid="uid://b5je6drtjvhbj" path="res://quit.gd" id="2_bajiw"]
 [ext_resource type="Script" uid="uid://50uori7hy26n" path="res://skip_tutorial.gd" id="2_f0j1r"]
 
@@ -23,7 +23,7 @@ offset_right = 782.0
 offset_bottom = 240.0
 theme_override_font_sizes/font_size = 27
 text = "Start Game"
-script = ExtResource("1_7mewq")
+script = ExtResource("1_f0j1r")
 
 [node name="Skip Tutorial" type="Button" parent="."]
 layout_mode = 0
